@@ -50,7 +50,7 @@ public class BrowserFactory {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
 		return driver;
 	}
-
+	
 	public static void tearDown() {
 
 		driver.close();

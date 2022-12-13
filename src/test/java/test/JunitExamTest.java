@@ -28,6 +28,8 @@ public class JunitExamTest {
 	// public void userShouldBeAbleToClickOnToggleAllCheckboxAndValidate() {
 	public void TC1() {
 		JunitExamPage junitExamPage = PageFactory.initElements(driver, JunitExamPage.class);
+		junitExamPage.clickOnToggleAllCheckbox();
+		junitExamPage.clickOnRemoveButton();
 		junitExamPage.createListItems("checkbox1");
 		junitExamPage.clickOnAddButton();
 		junitExamPage.createListItems("checkbox2");
@@ -48,12 +50,6 @@ public class JunitExamTest {
 	public void TC2() {
 		JunitExamPage junitExamPage = PageFactory.initElements(driver, JunitExamPage.class);
 		Integer i = junitExamPage.getNumberOfCheckboxes();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		junitExamPage.checkOneCheckbox();
 		junitExamPage.clickOnRemoveButton();
 		Integer j = junitExamPage.getNumberOfCheckboxes();
@@ -76,13 +72,7 @@ public class JunitExamTest {
 	@After
 	public void tearDown() {
 		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		BrowserFactory.tearDown();
+	BrowserFactory.tearDown();
 	}
 	
 }

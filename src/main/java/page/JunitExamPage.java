@@ -28,12 +28,7 @@ public class JunitExamPage extends BasePage {
 	WebElement removeButtonElement;
 	@FindBy(how = How.XPATH, using = "//input[@type='checkbox']")
 	List<WebElement> allCheckBoxes;
-	// @FindBy(how = How.XPATH, using = "//input[@type = 'hidden']/following::li")
-	// List <WebElement> listItems;
-
-	// static String before_xpath = "//input[@name='todo[";
-	// static String after_xpath = "]']";
-
+	
 	public void createListItems(String text) {
 
 		addTextElement.sendKeys(text);
@@ -51,14 +46,9 @@ public class JunitExamPage extends BasePage {
 			if (allCheckBoxes.get(i).isSelected()) {
 				System.out.println(i + " is selected");
 				allCheckBoxesAreSelected = true;
-			} else {
-				System.out.println(i + " is not selected");
-
-				return allCheckBoxesAreSelected = false;
-			}
-
+			} 
 		}
-		return allCheckBoxesAreSelected = true;
+			return allCheckBoxesAreSelected;
 	}
 
 	public void clickOnToggleAllCheckbox() {
@@ -66,13 +56,7 @@ public class JunitExamPage extends BasePage {
 		clickWebElement(toggleAllCheckboxElement);
 	}
 
-	public void uncheckToggleAllCheckbox() {
-
-//		clickWebElement(toggleAllCheckboxElement);
-		toggleAllCheckboxElement.click();
-	}
-
-	public void clickOnRemoveButton() {
+		public void clickOnRemoveButton() {
 
 		clickWebElement(removeButtonElement);
 	}
